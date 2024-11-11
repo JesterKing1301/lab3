@@ -1,0 +1,13 @@
+def modul(num1, num2):
+    try:
+        result = num1 % num2
+        return result
+    except ZeroDivisionError:
+        print("Помилка: Ділення на нуль")
+
+numerator = float(input("Введіть чисельник: "))
+denominator = float(input("Введіть знаменник: "))
+
+result = modul(numerator, denominator)
+if result is not None:
+    print(f"Залишок від ділення {numerator} на {denominator} дорівнює {result}.")
