@@ -1,0 +1,17 @@
+import math
+
+def log(value):
+    try:
+        if value <= 0:
+            raise ValueError("Логарифм визначений тільки для позитивних чисел.")
+        
+        return math.log(value)
+    
+    except ValueError as ve:
+        print(ve)
+
+num = float(input("Введіть число для обчислення логарифму: "))
+
+result = log(num)
+if result is not None:
+    print(f"Логарифм числа {num} дорівнює {result}.")
