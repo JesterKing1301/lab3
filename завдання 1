@@ -1,0 +1,25 @@
+import math
+
+def quadr(a, b, c):
+    try:
+        discr = b**2 - 4*a*c
+        if discr < 0:
+            raise ValueError("Дискримінант від'ємний, рівняння не має дійсних коренів.")
+        
+        x = (-b + math.sqrt(discr)) / (2 * a)
+        x2 = (-b - math.sqrt(discr)) / (2 * a)
+        
+        return x, x2
+    
+    except ValueError as ve:
+        print(ve)
+    finally:
+        print("Обчислення завершено.")
+
+a = float(input("Введіть коефіцієнт a: "))
+b = float(input("Введіть коефіцієнт b: "))
+c = float(input("Введіть коефіцієнт c: "))
+
+solve = quadr(a, b, c)
+if solve:
+    print(f"Корені рівняння: {solve[0]}, {solve[1]}")
